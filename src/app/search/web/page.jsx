@@ -4,7 +4,7 @@ import React from 'react'
 
 const WebSearch = async ({searchParams}) => {
   const startIndex = searchParams.start || "1"
-  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLWoy6PykfxdbnwlcWX0O3YbHTkpXcG0&cx=51cb156eebb564c2d&q=${searchParams.searchTerm}&start=${startIndex}`)
+  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${CONTEXT_GOOGLE_IP}&q=${searchParams.searchTerm}&start=${startIndex}`)
 
   if(!response.ok){
     throw new Error("Something went wrong")
